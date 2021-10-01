@@ -1,0 +1,23 @@
+package cssSelector;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Guru99 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "C:\\browser drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://demo.guru99.com/test/facebook.html");
+		Dimension d = new Dimension(450,550);
+		driver.manage().window().setSize(d);
+	
+		driver.findElement(By.cssSelector("input.inputtext")).sendKeys("qwerty1987");
+		driver.findElement(By.cssSelector("input.inputtext[type='password']")).sendKeys("1234567");
+		driver.findElement(By.cssSelector("input[type='submit']")).click();
+		
+		
+	}
+}
